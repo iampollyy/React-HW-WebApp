@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import List from './components/exampleComponentHW1/FruitList'
+import List from './components/FruitList/FruitList'
 
 function App() {
 
