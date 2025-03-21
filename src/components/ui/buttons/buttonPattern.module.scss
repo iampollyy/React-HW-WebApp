@@ -1,0 +1,89 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.36px;
+  transition: all 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+.primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--button-primary-hover-bg);
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--button-primary-focus-bg);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+.secondary {
+  outline: 1px solid var(--button-secondary-border-color);
+  color: var(--button-secondary-text);
+  background-color: var(--button-secondary-bg);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--accent-primary-hover);
+    color: var(--button-primary-text);
+  }
+
+  &:active {
+    background-color: var(--accent-primary);
+    color: var(--button-primary-text);
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--button-secondary-border-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+.sm {
+  padding: 10px 12px;
+  font-size: 14px;
+
+  @media screen and (max-width: 768px) {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+.md {
+  padding: 10px 27px;
+
+  @media screen and (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.lg {
+  padding: 18px 32px;
+  font-size: 18px;
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
