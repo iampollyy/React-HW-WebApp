@@ -1,14 +1,15 @@
+
+
 body{
   font-family: 'Inter', sans-serif;
 }
 
 :root {
  
-  --header-bg: #ffffff;
-
   /* Accent / Brand */
   --accent-primary: #35b8be;
   --accent-primary-hover: rgba(53, 184, 190, 0.7);
+  --light: #ffffff;
 
   /* Text */
   --text-header: #28224b; 
@@ -37,4 +38,49 @@ body{
   --input-border: #dddddd;
   --input-border-hover: #35b8be;
   --input-border-focus: #35b8be;
+
+
+  
+
+
+
 }
+
+
+/*Typography*/
+
+.heading1 {
+  color: var(--accent-primary);
+  font-size: 3.125rem;
+  font-weight: 400;
+  line-height: 3.437rem;
+  letter-spacing: 1.65px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0 10px;
+  }
+};
+
+
+.section__text {
+  color: var(--text-paragraph);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.687rem;
+  letter-spacing: 0.36px;
+  text-align: center;
+  margin-top: 20px;
+  max-width: 466px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.3px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+};

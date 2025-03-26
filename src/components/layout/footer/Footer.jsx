@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from "@layout/footer/footer.module.scss";
+import navLinksFooter from "@data/navLinksFooter.js";
 
+
+import { SocialMedia } from '@ui/socialMedia/SocialMedia';
+import Logo from '@images/logo/logo.svg';
+import { FooterLinksColumn } from './footerLinksColumn/FooterLinksColumn.jsx';
 
 export function Footer() {
 
@@ -10,39 +15,20 @@ export function Footer() {
       <div className={styles.container}>
 
         <div className={styles.logo__motto}>
-          <a href="#"><img src="/src/assets/images/logo/logo.svg" alt="logo" className={styles.logo} /></a>
+          <a href="#"><img src={Logo} alt="logo" className={styles.logo} /></a>
           <p className={styles.motto}>Takeaway & Delivery template for small - medium businesses.</p>
 
         </div>
 
         <div className={styles.content}>
 
-         <div className={styles.column}>
-              <h4 className={styles.column__title}>Company</h4>
-              <ul className={styles.column__list}>
-                <li><a href="#">Order</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Home</a></li>
-              </ul>
-          </div>
+        
+        <FooterLinksColumn title="Company" links={navLinksFooter.company} />
+        <FooterLinksColumn title="Template" links={navLinksFooter.template} />
+        <FooterLinksColumn title="Flowbase" links={navLinksFooter.flowbase} />
 
-          <div className={styles.column}>
-            <h4 className={styles.column__title}>Template</h4>
-            <ul className={styles.column__list}>
-              <li><a href="#">Style Guide</a></li>
-              <li><a href="#">Changelog</a></li>
-              <li><a href="#">Licence</a></li>
-              <li><a href="#">Webflow University</a></li>
-            </ul>
-          </div>
 
-          <div className={styles.column}>
-            <h4 className={styles.column__title}>Flowbase</h4>
-            <ul className={styles.column__list}>
-              <li><a href="#">More Cloneables</a></li>
-            </ul>
-          </div>
+
         </div>
 
       </div>
@@ -50,14 +36,9 @@ export function Footer() {
       <div className={styles.hr}></div>
 
       <div className={styles.footer__bottom}>
-        <p className={styles.footer__bottom__text}>Built by <span><a href="https://www.flowbase.co/" target='_blank'>Flowbase</a></span> · Powered by <span><a  target='_blank' href="https://webflow.com/">Webflow</a></span></p>
+        <p className={styles.footer__bottom__text}>Built by <span><a href="https://www.flowbase.co/" target='_blank' id = {styles.span_a}>Flowbase</a></span> · Powered by <span><a  target='_blank' href="https://webflow.com/" id={styles.span_a}>Webflow</a></span></p>
 
-        <div className={styles.social__media}>
-
-        <div className={styles.circle}><a href="https://www.instagram.com/iampollyaa?igsh=MTF2NnI0cGtpZ2FreA%3D%3D&utm_source=qr"  target='_blank'><img src="/src/assets/images/icons/inst.svg" alt="Instagram" /></a></div>
-        <div className={styles.circle}><a href="https://x.com/duolingo/status/1896646674053030299" target='_blank'><img src="/src/assets/images/icons/twitter.svg" alt="Twitter" /></a></div>
-        <div className={styles.circle}><a href="https://www.youtube.com/watch?v=KgDPUVRPNuc"  target='_blank'><img src="/src/assets/images/icons/youTube.svg" alt="YouTube" /></a></div>
-      </div>
+        <SocialMedia/>
 
       </div>
       

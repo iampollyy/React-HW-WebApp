@@ -1,4 +1,6 @@
-$sidebar-color: #ffffff;
+@import "@styles/media-queries.scss";
+
+
 $font-size: 0.937rem;
 $line-height: 1.25rem;
 
@@ -7,8 +9,8 @@ $line-height: 1.25rem;
   position: sticky;
   top: 0;
   z-index: 100; 
-  background-color: var(--header-bg);
-  @media screen and (max-width: 768px) {
+  background-color: var(--light);
+  @include for-size(phone-only) {
     padding: 16px 20px;
   }
 }
@@ -19,7 +21,7 @@ $line-height: 1.25rem;
   width: 100%;
   height: auto;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     max-width: 28px;
   }
 }
@@ -29,7 +31,7 @@ $line-height: 1.25rem;
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     padding: 0 16px;
     width: 100%;
   }
@@ -40,12 +42,12 @@ $line-height: 1.25rem;
   align-items: center;
   gap: 6.25rem;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only){
     display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    background-color: $sidebar-color;
+    background-color: var(--light);
     border: 1px solid var(--accent-primary);
     position: absolute;
     top: 60px;
@@ -66,7 +68,7 @@ $line-height: 1.25rem;
   font-size: $font-size;
   line-height: $line-height;
 
-  a {
+  #a {
     color: var(--text-header);
 
     &:hover {
@@ -75,18 +77,9 @@ $line-height: 1.25rem;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 
-.sidebar {
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-}

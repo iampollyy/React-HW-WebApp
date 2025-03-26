@@ -1,3 +1,6 @@
+@import "@styles/media-queries.scss";
+
+
 .card {
   width: 580px;
   height: 200px;
@@ -8,7 +11,7 @@
   align-items: center;
   padding: 0 26px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -25,7 +28,7 @@
   align-items: center;
   gap: 30px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     flex-direction: row;
     align-items: flex-start;
     gap: 16px;
@@ -37,7 +40,7 @@
   width: 120px;
   height: 120px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     width: 80px;
     height: auto;
   }
@@ -49,7 +52,7 @@
   width: 100%;
   gap: 6px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     width: 100%;
     gap: 5px;
   }
@@ -60,7 +63,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     flex-direction: row;
     align-items: flex-start;
     gap: 10px;
@@ -73,7 +76,7 @@
   line-height: 1.125rem;
   letter-spacing: 0.6px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     font-size: 1rem;
   }
 }
@@ -83,7 +86,7 @@
   font-size: 0.9375rem;
   line-height: 0.9375rem;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     font-size: 1rem;
   }
 }
@@ -96,7 +99,7 @@
   line-height: 1.5rem;
   letter-spacing: 0.32px;
 
-  @media screen and (max-width: 768px) {
+  @include for-size(phone-only) {
     font-size: 14px;
     line-height: 1.3rem;
   }
