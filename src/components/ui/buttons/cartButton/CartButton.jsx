@@ -1,12 +1,15 @@
 import React from "react";
-import { ButtonPattern } from "../ButtonPattern";
+
 import styles from "@buttons/cartButton/CartButton.module.scss";
 
-export function CartButton({ onClick }) {
+import { ButtonPattern } from "../ButtonPattern";
+import Cart from "@images/icons/cart.svg";  
+
+export function CartButton(props) {
   return (
   
-      <ButtonPattern onClick={onClick}  type ='button' variant='primary' size ='sm' className={styles.cart}>
-        <img src="src/assets/images/icons/cart.svg" alt="cart" />
+      <ButtonPattern onClick={props.onClick}  type ='button' variant='primary' size ='sm' className={styles.cart}>
+        <img src={Cart} alt="cart" />
         <div className={styles.counter}>
         <p className={styles.counter__value}>0</p>
       </div>

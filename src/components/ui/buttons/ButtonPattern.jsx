@@ -8,12 +8,14 @@ export function ButtonPattern({
   variant = "primary",
   size = "md",
   className = "",
+  ...props
 }) {
   return (
     <button
       type={type}
       onClick={onClick}
       className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
+      {...props}
     >
       {children}
     </button>

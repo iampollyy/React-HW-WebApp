@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-
-
+import React from "react";
 import styles from "./burgerMenuButton.module.scss";
 
-export function BurgerMenuButton({ onClick}) { 
+import SideBar from "@images/icons/burger_menu.svg";
 
+
+export function BurgerMenuButton({onClick }) { 
   return (
-   <button className={styles.sidebar} onClick={onClick}>
-       <img src="/src/assets/images/icons/burger_menu.svg" alt="Sidebar"/>
-  </button>
+    <button className={styles.sidebar} onClick={onClick}>
+      <img src={SideBar} alt="Menu Toggle" />
+    </button>
   );
 }

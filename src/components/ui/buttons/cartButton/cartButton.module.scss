@@ -2,7 +2,7 @@
 
 .cart {
   position: relative;
-  padding: 19px 17px 17px;
+  padding: 19px 17px 17px !important;
 
   @include for-size(phone-only) {
     padding: 15px 12px;
