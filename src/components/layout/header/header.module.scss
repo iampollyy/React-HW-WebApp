@@ -1,0 +1,38 @@
+@import "@styles/media-queries.scss";
+
+$font-size: 0.937rem;
+$line-height: 1.25rem;
+
+.header {
+  padding: 20px 120px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--light);
+
+  @include for-size(phone-only) {
+    padding: 16px 20px;
+  }
+}
+
+.logo {
+  display: block;
+  max-width: 40px;
+  width: 100%;
+  height: auto;
+
+  @include for-size(phone-only) {
+    max-width: 28px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include for-size(phone-only) {
+    padding: 0 16px;
+    width: 100%;
+  }
+}

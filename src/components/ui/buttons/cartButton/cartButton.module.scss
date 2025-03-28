@@ -1,0 +1,36 @@
+@import "@styles/media-queries.scss";
+
+.cart {
+  position: relative;
+  padding: 19px 17px 17px !important;
+
+  @include for-size(phone-only) {
+    padding: 15px 12px;
+  }
+}
+
+.counter {
+
+  &__value {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #fff;
+    color: var(--accent-primary);
+    font-size: 0.812rem;
+    line-height: 18px;
+
+    @include for-size(phone-only) {
+      width: 20px;
+      height: 20px;
+      font-size: 0.6875rem;
+      line-height: 16px;
+    }
+  }
+}

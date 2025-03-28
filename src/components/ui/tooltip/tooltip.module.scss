@@ -1,0 +1,44 @@
+@import "@styles/media-queries.scss";
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color: var(--accent-primary);
+  cursor: pointer;
+
+  .tooltip__text {
+    position: absolute;
+    bottom: -50px;
+    left: 1%;
+    width: 112px;
+    height: 53px;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 6px;
+    border: 1px solid var(--accent-primary-hover);
+    background: var(--input-bg);
+    color: var(--text-paragraph);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+
+    @include for-size(phone-only) {
+      width: 90px;  
+      font-size: 10px; 
+      height: auto;
+      bottom: -20px; 
+      left: 50%;
+      transform: translateX(-50%); 
+    }
+  }
+
+  &:hover .tooltip__text {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+}

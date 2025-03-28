@@ -1,0 +1,11 @@
+@import "@styles/media-queries.scss";
+
+.sidebar {
+  display: none;
+
+  @include for-size(phone-only) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
