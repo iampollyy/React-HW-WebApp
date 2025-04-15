@@ -7,7 +7,7 @@ async function fetchMeals() {
     );
 
     if (!response.ok) {
-      throw new Error(`Ошибка: ${response.status}`);
+      throw new Error(`Error: ${response.status}`);
     }
 
     const data = await response.json();
@@ -25,7 +25,7 @@ async function fetchMeals() {
         )
     );
   } catch (error) {
-    console.error("Ошибка при получении данных:", error.message);
+    console.error("Error occurred while fetching data:", error.message);
     return [];
   }
 }

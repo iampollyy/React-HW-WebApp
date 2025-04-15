@@ -1,7 +1,7 @@
 @import "@styles/media-queries.scss";
 
 
-input {
+.input {
   border-radius: 6px;
   border: 1px solid var(--input-border);
   background: var(--input-bg);
@@ -24,16 +24,16 @@ input {
     border: 1px solid var(--input-border-focus);
   }
 
-@include for-size(phone-only) {
+  @include for-size(phone-only) {
     font-size: 14px;
     padding: 8px;
   }
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .sm {
@@ -41,7 +41,7 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 27px;
   justify-content: center;
 
- @include for-size(phone-only) {
+  @include for-size(phone-only) {
     padding: 6px;
     font-size: 14px;
   }
@@ -63,7 +63,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 18px;
   line-height: 26px;
   justify-content: flex-start;
-  
+
   @include for-size(phone-only) {
     padding: 12px;
     font-size: 16px;

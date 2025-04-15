@@ -31,7 +31,7 @@ export class ProductCard extends Component {
     const { amount } = this.state;
 
     return (
-      <div key={item.id} className={styles.card}>
+      <div className={styles.card}>
         <div className={styles.container}>
           <img src={item.img} alt={item.meal} className={styles.image} />
           <div className={styles.aboutBurger}>
@@ -42,13 +42,10 @@ export class ProductCard extends Component {
             <p className={styles.description}>
               {item.instructions.slice(0, 120)}
             </p>
-            <div className={styles.add_to_cart__amount}>
+            <div className={styles.add_to_cart__actions}>
               <Input
                 size="md"
                 type="number"
-                min={0}
-                max={100}
-                value={amount}
                 onChange={this.handleChange}
               />
               <ButtonPattern

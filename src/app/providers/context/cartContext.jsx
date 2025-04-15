@@ -5,7 +5,7 @@ export const CartContext = createContext();
 
 export class CartProvider extends Component {
   state = {
-    cart: JSON.parse(localStorage.getItem('cart')) || {},
+    cart: JSON.parse(sessionStorage.getItem('cart')) || {},
   };
 
   addToCart = (id, amount) => {
@@ -14,7 +14,7 @@ export class CartProvider extends Component {
         ...prevState.cart,
         [id]: (prevState.cart[id] || 0) + amount,
       };
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      sessionStorage.setItem('cart', JSON.stringify(updatedCart));
       return { cart: updatedCart };
     });
   };
@@ -23,7 +23,7 @@ export class CartProvider extends Component {
     this.setState((prevState) => {
       const updatedCart = { ...prevState.cart };
       delete updatedCart[id];
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      sessionStorage.setItem('cart', JSON.stringify(updatedCart));
       return { cart: updatedCart };
     });
   };

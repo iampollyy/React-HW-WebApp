@@ -26,16 +26,23 @@ export class ProductList extends Component {
     }));
   }
 
+  getCategories = ()=>{
+    const { meals } = this.state;
+    const categoriesSet = new Set(meals.map(meal => meal.category));
+    return Array.from(categoriesSet);
+  }
+
   render() {
     const { currPage, meals } = this.state;
     const visibleMeals = meals.slice(0, currPage * ProductList.itemsPerPage);
     const hasMore = visibleMeals.length < meals.length;
+    const categories =  this.getCategories();
 
     return (
       <>
         <div className={styles.productList__container}>
           <div className={styles.buttons__container}>
-            {["Desserts", "Dinner", "Breakfast"].map((label) => (
+            {categories.map((label) => (
               <ButtonPattern key={label} variant="secondary" size="md">
                 {label}
               </ButtonPattern>

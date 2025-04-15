@@ -1,6 +1,5 @@
 @import "@styles/media-queries.scss";
 
-
 .card {
   width: 580px;
   height: 200px;
@@ -19,8 +18,6 @@
     padding: 16px;
   }
 }
-
-
 
 .container {
   display: flex;
@@ -58,23 +55,23 @@
   }
 }
 
-.title__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @include for-size(phone-only) {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-  }
-}
-
 .title {
   color: var(--text-title-dark);
   font-size: 1.125rem;
   line-height: 1.125rem;
   letter-spacing: 0.6px;
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-size(phone-only) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
 
   @include for-size(phone-only) {
     font-size: 1rem;
@@ -106,9 +103,13 @@
 }
 
 
-.add_to_cart__amount {
+.add_to_cart__actions {
   display: flex;
   justify-content: flex-start;
   gap: 8px;
   align-items: center;
+
+  input[type="number"] {
+    max-width: 60px;
+  }
 }

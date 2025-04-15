@@ -2,21 +2,14 @@ import React, {Component} from "react";
 
 import styles from "@pages/menuPage/menu.module.scss";
 
-import { Header } from "@widgets/header/header.jsx";  
-import { Footer } from "@widgets/footer/footer.jsx";
 import { ProductList } from "@entities/productList/ProductList.jsx";
 import { Tooltip } from "@ui/tooltip/Tooltip.jsx";
-
-
-
 
 
 export class Menu extends Component {
   render() {
 
     return (
-      <>
-        <Header />
         <section className={styles.menu__section}>
         <div className={styles.menu__section__container}>
 
@@ -29,9 +22,6 @@ export class Menu extends Component {
        
         </div>
         </section>
-      
-        <Footer />
-      </>
     );
 
   }
