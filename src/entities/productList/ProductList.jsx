@@ -26,7 +26,7 @@ export class ProductList extends Component {
     }));
   }
 
-  getCategories = ()=>{
+  getCategories = ()=> {
     const { meals } = this.state;
     const categoriesSet = new Set(meals.map(meal => meal.category));
     return Array.from(categoriesSet);
