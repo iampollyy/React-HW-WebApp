@@ -1,16 +1,16 @@
-import React, {Component} from "react";
+import React from "react";
 import styles from "./burgerMenuButton.module.scss";
 
 import SideBar from "@images/icons/burger_menu.svg";
 
 
-export class BurgerMenuButton extends Component {
-  render() {
-    const {onClick} = this.props;
+export const BurgerMenuButton = ({onClick}) => {
+  {
     return (
-      <button className={styles.sidebar} onClick={onClick}>
-        <img src={SideBar} alt="Menu Toggle" />
-      </button>
+        <button className={styles.sidebar} onClick={onClick}>
+          <img src={SideBar} alt="Menu Toggle"/>
+        </button>
     );
   }
 }
+

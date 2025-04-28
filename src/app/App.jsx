@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { CartProvider } from '@context/CartContext';
 import { Menu } from '@pages/menuPage/menu.jsx';
 import {Layout} from "@ui/layout/Layout.jsx";
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <CartProvider>
         <Layout >
@@ -13,6 +12,6 @@ class App extends Component {
       </CartProvider>
     );
   }
-}
+
 
 export default App;

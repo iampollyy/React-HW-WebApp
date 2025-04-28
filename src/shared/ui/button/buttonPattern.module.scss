@@ -10,67 +10,62 @@
   letter-spacing: 0.36px;
   transition: all 0.3s ease;
 
-}
-
-.primary {
-  background-color: var(--button-primary-bg);
-  color: var(--button-primary-text);
-
-  &:hover {
-    background-color: var(--button-primary-hover-bg);
-  }
-
-  &:focus-visible {
-    outline: 1px solid var(--button-primary-focus-bg);
-  }
-
-  
-}
-
-.secondary {
-  outline: 1px solid var(--button-secondary-border-color);
-  color: var(--button-secondary-text);
-  background-color: var(--button-secondary-bg);
-
-  &:hover {
-    background-color: var(--accent-primary-hover);
+  &[data-variant="primary"] {
+    background-color: var(--button-primary-bg);
     color: var(--button-primary-text);
+
+    &:hover {
+      background-color: var(--button-primary-hover-bg);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--button-primary-focus-bg);
+    }
   }
 
-  &:active {
-    background-color: var(--accent-primary);
-    color: var(--button-primary-text);
-  }
-
-  &:focus-visible {
+  &[data-variant="secondary"] {
     outline: 1px solid var(--button-secondary-border-color);
+    color: var(--button-secondary-text);
+    background-color: var(--button-secondary-bg);
+
+    &:hover {
+      background-color: var(--accent-primary-hover);
+      color: var(--button-primary-text);
+    }
+
+    &:active {
+      background-color: var(--accent-primary);
+      color: var(--button-primary-text);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--button-secondary-border-color);
+    }
   }
 
- 
-}
-
-.sm {
-  padding: 10px 12px;
-  font-size: 14px;
-  @media screen and (max-width: 768px) {
-    padding: 8px 10px;
-    font-size: 12px;
-  }
-}
-
-.md {
-  padding: 10px 27px;
-  @media screen and (max-width: 768px) {
-    padding: 8px 16px;
+  &[data-size="sm"] {
+    padding: 10px 12px;
     font-size: 14px;
+    @media screen and (max-width: 768px) {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
   }
-}
 
-.lg {
-  padding: 18px 32px;
-  font-size: 18px;
-  @media screen and (max-width: 768px) {
-    padding: 12px 20px;
-    font-size: 16px;
+  &[data-size="md"] {
+    padding: 10px 27px;
+    @media screen and (max-width: 768px) {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+
+  &[data-size="lg"] {
+    padding: 18px 32px;
+    font-size: 18px;
+    @media screen and (max-width: 768px) {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
   }
 }

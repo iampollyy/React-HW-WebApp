@@ -1,10 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 
 import styles from "./footerLinksColumn.module.scss";
 
-export class FooterLinksColumn extends Component {
-  render() {
-    const {links, title} = this.props;
+export const FooterLinksColumn = ({links, title}) => {
     return (
       <div className={styles.column}>
         <h4 className={styles.column__title}>{title}</h4>
@@ -19,5 +17,5 @@ export class FooterLinksColumn extends Component {
       </div>
     );
   }
-}
+
 

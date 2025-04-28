@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import styles from "./footer.module.scss";
 
 import navLinksFooter from "@config/navLinksFooter.js";
@@ -6,9 +6,7 @@ import { SocialMedia } from '@ui/socialMedia/SocialMedia';
 import Logo from '@images/logo/logo.svg';
 import { FooterLinksColumn } from './footerLinksColumn/FooterLinksColumn.jsx';
 
-export class Footer extends Component {
-
-  render() {
+export const Footer = () => {
     return (
       <footer>
         <div className={styles.container}>
@@ -45,4 +43,3 @@ export class Footer extends Component {
     )
   }
 
-}

@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styles from "./header.module.scss";
 
 import Logo from '@images/logo/logo.svg';
 import { NavMenuHeader } from '@features/navMenu/navMenuHeader/navMenuHeader.jsx';
 
-export class Header extends Component {
+export const Header = () => {
 
-  render() {
     return (
       <header className={styles.header}>
         <div className={styles.container}>
@@ -20,4 +19,4 @@ export class Header extends Component {
       </header>
     )
   }
-}
+
