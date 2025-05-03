@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-.social__media {
+@import "@styles/mixins/mediaQueries.scss";.social__media {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;

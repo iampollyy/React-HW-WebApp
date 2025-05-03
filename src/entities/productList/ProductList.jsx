@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { ProductCard } from "@entities/productCard/ProductCard";
 import { ButtonPattern } from "@ui/button/ButtonPattern";
-import { fetchMeals } from "@api/fetchMeals";
 import styles from "./productList.module.scss";
+import {useFetch} from "@hooks/useFetch";
 
 export const ProductList = () => {
   const [currPage, setCurrPage] = useState(1);
   const [meals, setMeals] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredMeals, setFilteredMeals] = useState([]);
+  const { fetchDataWithLogger} = useFetch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const fetchedMeals = await fetchMeals();
-      setMeals(fetchedMeals);
-      setFilteredMeals(fetchedMeals);
-    };
+    fetchDataWithLogger("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals").then(res => {
+      console.log(res);
+      setMeals(res);
+      setFilteredMeals(res);
+    })
 
-    fetchData();
+
+
   }, []);
 
   const itemsPerPage = 6;

@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-.buttons__container {
+@import "@styles/mixins/mediaQueries.scss";.buttons__container {
   display: flex;
   flex-direction: row;
   align-items: center;

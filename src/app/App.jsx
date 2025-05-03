@@ -1,13 +1,15 @@
 import React from 'react';
 import { CartProvider } from '@context/CartContext';
-import { Menu } from '@pages/menuPage/menu.jsx';
-import {Layout} from "@ui/layout/Layout.jsx";
+import {HomePage} from "@pages/homePage/HomePage";
+import { Layout } from "@ui/layout/Layout.jsx";
+import {MenuPage} from "@pages/menuPage/MenuPage";
 
 const App = () => {
     return (
       <CartProvider>
-        <Layout >
-        <Menu />
+        <Layout>
+            <HomePage/>
+            <MenuPage/>
         </Layout>
       </CartProvider>
     );

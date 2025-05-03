@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-.card {
+@import "@styles/mixins/mediaQueries.scss";.card {
   width: 580px;
   height: 200px;
   background-color: var(--cards-bg-color); 

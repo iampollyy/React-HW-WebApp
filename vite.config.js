@@ -5,8 +5,6 @@ import path from "node:path";
 
 // ESM-compatible __dirname
 
-
-
 export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
@@ -29,6 +27,7 @@ export default defineConfig({
       "@config": path.resolve(__dirname, "src/shared/config"),
       "@api": path.resolve(__dirname, "src/shared/api"),
       "@types": path.resolve(__dirname, "src/shared/types"),
+      "@hooks": path.resolve(__dirname, "src/shared/hooks"),
     },
-  }
+  },
 });

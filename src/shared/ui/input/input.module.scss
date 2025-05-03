@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-
+@import "@styles/mixins/mediaQueries.scss";
 .input {
   border-radius: 6px;
   border: 1px solid var(--input-border);
@@ -48,7 +46,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .md {
-  padding: 10px 0px;
+  padding: 10px 0;
   line-height: 24px;
   justify-content: center;
 
