@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "description": "React homework assignments",
   "author": "Polina Trybialustava",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +13,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.85.1"
+    "sass": "^1.85.1",
+    "svgr": "^1.10.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

@@ -1,27 +1,34 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
 import svgr from "vite-plugin-svgr";
+import path from "node:path";
 
-// https://vite.dev/config/
+// ESM-compatible __dirname
+
+
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), svgr()],
   resolve: {
     alias: {
+      "@app": path.resolve(__dirname, "src/app"),
+      "@providers": path.resolve(__dirname, "src/app/providers"),
+      "@context": path.resolve(__dirname, "src/app/providers/context"),
+      "@styles": path.resolve(__dirname, "src/styles"),
+
       "@assets": path.resolve(__dirname, "src/assets"),
       "@images": path.resolve(__dirname, "src/assets/images"),
-      "@components": path.resolve(__dirname, "src/components"),
-      "@layout": path.resolve(__dirname, "src/components/layout"),
-      "@forms": path.resolve(__dirname, "src/components/forms"),
-      "@ui": path.resolve(__dirname, "src/components/ui"),
-      "@data": path.resolve(__dirname, "src/data"),
-      "@hooks": path.resolve(__dirname, "src/hooks"),
-      "@pages": path.resolve(__dirname, "src/pages"),
-      "@styles": path.resolve(__dirname, "src/styles"),
-      "@shared": path.resolve(__dirname, "src/shared"),
-      "@buttons": path.resolve(__dirname, "src/components/ui/buttons"),
-    },
 
-    plugins: [svgr()],
-  },
+      "@pages": path.resolve(__dirname, "src/pages"),
+      "@features": path.resolve(__dirname, "src/features"),
+      "@entities": path.resolve(__dirname, "src/entities"),
+      "@shared": path.resolve(__dirname, "src/shared"),
+
+      "@ui": path.resolve(__dirname, "src/shared/ui"),
+      "@widgets": path.resolve(__dirname, "src/shared/widgets"),
+      "@config": path.resolve(__dirname, "src/shared/config"),
+      "@api": path.resolve(__dirname, "src/shared/api"),
+      "@types": path.resolve(__dirname, "src/shared/types"),
+    },
+  }
 });
