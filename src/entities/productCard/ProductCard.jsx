@@ -25,35 +25,35 @@ export const ProductCard = ({ item }) => {
   };
 
   return (
-      <div className={styles.card}>
-        <div className={styles.container}>
-          <img src={item.img} alt={item.meal} className={styles.image} />
-          <div className={styles.aboutBurger}>
-            <div className={styles.title__price}>
-              <p className={styles.title}>{item.meal}</p>
-              <p className={styles.price}>${item.price} USD</p>
-            </div>
-            <p className={styles.description}>
-              {item.instructions.slice(0, 120)}
-            </p>
-            <form className={styles.add_to_cart__actions}>
-              <Input
-                  size="md"
-                  type="number"
-                  value={amount}
-                  onChange={handleChange}
-              />
-              <ButtonPattern
-                  variant="primary"
-                  size="md"
-                  className={styles.add_to_cart}
-                  onClick ={handleAddToCart}
-              >
-                Add to cart
-              </ButtonPattern>
-            </form>
+    <div className={styles.card}>
+      <div className={styles.container}>
+        <img src={item.img} alt={item.meal} className={styles.image} />
+        <div className={styles.aboutBurger}>
+          <div className={styles.title__price}>
+            <p className={styles.title}>{item.meal}</p>
+            <p className={styles.price}>${item.price} USD</p>
           </div>
+          <p className={styles.description}>
+            {item.instructions.slice(0, 120)}
+          </p>
+          <form className={styles.add_to_cart__actions} onSubmit={(e) => e.preventDefault()}>
+            <Input
+              size="md"
+              type="number"
+              value={amount}
+              onChange={handleChange}
+            />
+            <ButtonPattern
+              variant="primary"
+              size="md"
+              className={styles.add_to_cart}
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </ButtonPattern>
+          </form>
         </div>
       </div>
+    </div>
   );
 };

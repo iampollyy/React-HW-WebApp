@@ -4,14 +4,13 @@ import { Menu } from '@pages/menuPage/menu.jsx';
 import {Layout} from "@ui/layout/Layout.jsx";
 
 const App = () => {
-    return (
-      <CartProvider>
-        <Layout >
+  return (
+    <CartProvider>
+      <Layout>
         <Menu />
-        </Layout>
-      </CartProvider>
-    );
-  }
-
+      </Layout>
+    </CartProvider>
+  );
+};
 
 export default App;

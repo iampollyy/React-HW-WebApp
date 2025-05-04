@@ -16,18 +16,17 @@ export const ProductList = () => {
       setMeals(fetchedMeals);
       setFilteredMeals(fetchedMeals);
     };
-
     fetchData();
   }, []);
 
   const itemsPerPage = 6;
 
   const handleLoadMore = () => {
-    setCurrPage(prevState => prevState + 1);
+    setCurrPage((prev) => prev + 1);
   };
 
   const getCategories = () => {
-    const categoriesSet = new Set(meals.map(meal => meal.category));
+    const categoriesSet = new Set(meals.map((meal) => meal.category));
     return Array.from(categoriesSet);
   };
 
@@ -37,8 +36,7 @@ export const ProductList = () => {
       setFilteredMeals(meals);
     } else {
       setSelectedCategory(category);
-      const filtered = meals.filter((meal) => meal.category === category);
-      setFilteredMeals(filtered);
+      setFilteredMeals(meals.filter((meal) => meal.category === category));
     }
     setCurrPage(1);
   };
@@ -48,38 +46,40 @@ export const ProductList = () => {
   const categories = getCategories();
 
   return (
-      <div className={styles.productList__container}>
-        <div className={styles.buttons__container}>
-          {categories.map((label) => (
-              <ButtonPattern
-                  key={label}
-                  variant={selectedCategory === label ? "primary" : "secondary"}
-                  size="md"
-                  onClick={() => handleCategoryClick(label)}
-              >
-                {label}
-              </ButtonPattern>
-          ))}
-        </div>
-
-        <div className={styles.product__container}>
-          {visibleMeals.length > 0 ? (
-              visibleMeals.map((item) => <ProductCard key={item.id} item={item} />)
-          ) : (
-              <p>Loading meals...</p>
-          )}
-
-          {hasMore && (
-              <ButtonPattern
-                  variant="primary"
-                  size="md"
-                  className={styles.seeMore__button}
-                  onClick={handleLoadMore}
-              >
-                See more
-              </ButtonPattern>
-          )}
-        </div>
+    <div className={styles.productList__container}>
+      <div className={styles.buttons__container}>
+        {categories.map((label) => (
+          <ButtonPattern
+            key={label}
+            variant={selectedCategory === label ? "primary" : "secondary"}
+            size="md"
+            onClick={() => handleCategoryClick(label)}
+          >
+            {label}
+          </ButtonPattern>
+        ))}
       </div>
+
+      <div className={styles.product__container}>
+        {visibleMeals.length > 0 ? (
+          visibleMeals.map((item) => (
+            <ProductCard key={item.id} item={item} />
+          ))
+        ) : (
+          <p>Loading meals...</p>
+        )}
+
+        {hasMore && (
+          <ButtonPattern
+            variant="primary"
+            size="md"
+            className={styles.seeMore__button}
+            onClick={handleLoadMore}
+          >
+            See more
+          </ButtonPattern>
+        )}
+      </div>
+    </div>
   );
 };
