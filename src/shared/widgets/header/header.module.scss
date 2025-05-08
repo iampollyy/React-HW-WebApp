@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-$font-size: 0.937rem;
+@import "@styles/mixins/mediaQueries.scss";$font-size: 0.937rem;
 $line-height: 1.25rem;
 
 .header {

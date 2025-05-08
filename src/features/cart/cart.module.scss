@@ -1,6 +1,4 @@
-@import "@styles/media-queries.scss";
-
-.cart {
+@import "@styles/mixins/mediaQueries.scss";.cart {
   position: relative;
   padding: 19px 17px 17px !important;
 

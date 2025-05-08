@@ -8,4 +8,4 @@ export const Tooltip = ({ children, text }) => {
       <div className={styles.tooltip__text}>{text}</div>
     </div>
   );
-};
+}
