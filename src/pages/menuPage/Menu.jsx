@@ -1,28 +1,23 @@
-import React, {Component} from "react";
+import React from "react";
 
 import styles from "@pages/menuPage/menu.module.scss";
 
 import { ProductList } from "@entities/productList/ProductList.jsx";
 import { Tooltip } from "@ui/tooltip/Tooltip.jsx";
 
-
-export class Menu extends Component {
-  render() {
-
+export const Menu = () => {
     return (
         <section className={styles.menu__section}>
-        <div className={styles.menu__section__container}>
+            <div className={styles.menu__section__container}>
+                <div className={styles.heading__container}>
+                    <h1 className="heading1">Browse our menu</h1>
+                    <div className="section__text">
+                        Use our menu to place an order online, or <Tooltip text='+37062464083'>phone</Tooltip> our store to place a pickup order. Fast and fresh food.
+                    </div>
+                </div>
 
-          <div className={styles.heading__container}>
-            <h1 className="heading1">Browse our menu</h1>
-            <div className="section__text">Use our menu to place an order online, or <Tooltip text='+37062464083'>phone</Tooltip> our store to place a pickup order. Fast and fresh food.</div>
-          </div>
-       
-          <ProductList />
-       
-        </div>
+                <ProductList />
+            </div>
         </section>
     );
-
-  }
-}
+};

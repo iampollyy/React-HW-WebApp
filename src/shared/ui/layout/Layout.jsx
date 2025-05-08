@@ -1,17 +1,12 @@
-import {Component} from "react";
+import { Header } from "@widgets/Header/Header.jsx";
+import { Footer } from "@widgets/footer/Footer.jsx";
 
-import {Header} from "@widgets/Header/Header.jsx";
-import {Footer} from "@widgets/footer/Footer.jsx";
-
-export class Layout extends Component{
-    render() {
-        const {children} = this.props;
-        return (
-            <>
-                <Header/>
-                {children}
-                <Footer/>
-            </>
-        )
-    }
-}
+export const Layout = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+};

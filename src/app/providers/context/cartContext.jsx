@@ -1,42 +1,38 @@
-
-import React, { Component, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 export const CartContext = createContext();
 
-export class CartProvider extends Component {
-  state = {
-    cart: JSON.parse(sessionStorage.getItem('cart')) || {},
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState(() => {
+    try {
+      return JSON.parse(sessionStorage.getItem('cart')) || {};
+    } catch {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  const addToCart = (id, amount) => {
+    setCart((prevCart) => ({
+      ...prevCart,
+      [id]: (prevCart[id] || 0) + amount,
+    }));
   };
 
-  addToCart = (id, amount) => {
-    this.setState((prevState) => {
-      const updatedCart = {
-        ...prevState.cart,
-        [id]: (prevState.cart[id] || 0) + amount,
-      };
-      sessionStorage.setItem('cart', JSON.stringify(updatedCart));
-      return { cart: updatedCart };
-    });
-  };
-
-  removeFromCart = (id) => {
-    this.setState((prevState) => {
-      const updatedCart = { ...prevState.cart };
+  const removeFromCart = (id) => {
+    setCart((prevCart) => {
+      const updatedCart = { ...prevCart };
       delete updatedCart[id];
-      sessionStorage.setItem('cart', JSON.stringify(updatedCart));
-      return { cart: updatedCart };
+      return updatedCart;
     });
   };
 
-  render() {
-    return (
-      <CartContext.Provider value={{
-        cart: this.state.cart,
-        addToCart: this.addToCart,
-        removeFromCart: this.removeFromCart,
-      }}>
-        {this.props.children}
-      </CartContext.Provider>
-    );
-  }
-}
+  return (
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
+  );
+};

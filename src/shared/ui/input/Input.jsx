@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./input.module.scss";
 
-export class Input extends Component {
-  render() {
-    return (
-      <input
-        type={this.props.type || "text"}
-        className={`${styles.input} ${styles[this.props.size || "md"]} ${this.props.className || ""}`}
-        {...this.props}
-      />
-    );
-  }
-}
+export const Input = ({
+  type = "text",
+  size = "md",
+  className = "",
+  ...props
+}) => {
+  return (
+    <input
+      type={type}
+      className={`${styles.input} ${styles[size]} ${className}`}
+      {...props}
+    />
+  );
+};
