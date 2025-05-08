@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { ProductCard } from "@entities/productCard/ProductCard";
 import { ButtonPattern } from "@ui/button/ButtonPattern";
+import { fetchMeals } from "@api/fetchMeals";
 import styles from "./productList.module.scss";
-import {useFetch} from "@hooks/useFetch";
 
 export const ProductList = () => {
   const [currPage, setCurrPage] = useState(1);
   const [meals, setMeals] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredMeals, setFilteredMeals] = useState([]);
-  const { fetchDataWithLogger} = useFetch();
 
   useEffect(() => {
-    fetchDataWithLogger("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals").then(res => {
-      setMeals(res);
-      setFilteredMeals(res);
-    })
+    const fetchData = async () => {
+      const fetchedMeals = await fetchMeals();
+      setMeals(fetchedMeals);
+      setFilteredMeals(fetchedMeals);
+    };
 
-
-
+    fetchData();
   }, []);
 
   const itemsPerPage = 6;
@@ -27,10 +26,11 @@ export const ProductList = () => {
     setCurrPage(prevState => prevState + 1);
   };
 
-  const getCategories = () => {
+  const categories = useMemo(() => {
     const categoriesSet = new Set(meals.map(meal => meal.category));
     return Array.from(categoriesSet);
-  };
+  }, [meals]
+  );
 
   const handleCategoryClick = (category) => {
     if (selectedCategory === category) {
@@ -46,10 +46,10 @@ export const ProductList = () => {
 
   const visibleMeals = filteredMeals.slice(0, currPage * itemsPerPage);
   const hasMore = visibleMeals.length < filteredMeals.length;
-  const categories = getCategories();
+
 
   return (
-      <div className={styles.productList__container}>
+      <div className={styles.product__container}>
         <div className={styles.buttons__container}>
           {categories.map((label) => (
               <ButtonPattern

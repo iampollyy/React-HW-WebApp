@@ -11,16 +11,16 @@ export const Cart = () => {
   const cartCount = Object.values(cart).reduce((acc, amount) => acc + amount, 0);
 
   return (
-      <ButtonPattern
-          type="button"
-          variant="primary"
-          size="sm"
-          className={styles.cart}
-      >
-        <img src={Cart_img} alt="cart" />
-        <div className={styles.counter}>
-          <p className={styles.counter__value}>{cartCount}</p>
-        </div>
-      </ButtonPattern>
+    <ButtonPattern
+      type="button"
+      variant="primary"
+      size="sm"
+      className={styles.cart}
+    >
+      <img src={Cart_img} alt="cart" />
+      <div className={styles.counter}>
+        <p className={styles.counter__value}>{cartCount}</p>
+      </div>
+    </ButtonPattern>
   );
 };
