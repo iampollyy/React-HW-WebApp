@@ -6,6 +6,7 @@ import HomePageBanner from '@images/banners/homePageBanner.svg';
 import RatingImg from '@images/icons/rating.svg';
 
 import { ButtonPattern } from "@ui/button/ButtonPattern";
+import {useFetch} from "@hooks/useFetch";
 
 
 const HomeSection = styled.section`
