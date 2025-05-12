@@ -1,36 +1,31 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { ProductCard } from "@entities/productCard/ProductCard";
 import { ButtonPattern } from "@ui/button/ButtonPattern";
-import { fetchMeals } from "@api/fetchMeals";
 import styles from "./productList.module.scss";
+import { useFetch } from "@hooks/useFetch";
 
 export const ProductList = () => {
   const [currPage, setCurrPage] = useState(1);
-  const [meals, setMeals] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const { data: meals, error, loading } = useFetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals");
   const [filteredMeals, setFilteredMeals] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedMeals = await fetchMeals();
-      setMeals(fetchedMeals);
-      setFilteredMeals(fetchedMeals);
-    };
-
-    fetchData();
-  }, []);
-
   const itemsPerPage = 6;
 
+  useEffect(() => {
+    if (meals) {
+      setFilteredMeals(meals);
+    }
+  }, [meals]);
+
   const handleLoadMore = () => {
-    setCurrPage(prevState => prevState + 1);
+    setCurrPage((prevState) => prevState + 1);
   };
 
   const categories = useMemo(() => {
-    const categoriesSet = new Set(meals.map(meal => meal.category));
+    if (!meals) return [];
+    const categoriesSet = new Set(meals.map((meal) => meal.category));
     return Array.from(categoriesSet);
-  }, [meals]
-  );
+  }, [meals]);
 
   const handleCategoryClick = (category) => {
     if (selectedCategory === category) {
@@ -47,6 +42,8 @@ export const ProductList = () => {
   const visibleMeals = filteredMeals.slice(0, currPage * itemsPerPage);
   const hasMore = visibleMeals.length < filteredMeals.length;
 
+  if (loading) return <p>Loading meals...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
       <div className={styles.product__container}>
@@ -67,7 +64,7 @@ export const ProductList = () => {
           {visibleMeals.length > 0 ? (
               visibleMeals.map((item) => <ProductCard key={item.id} item={item} />)
           ) : (
-              <p>Loading meals...</p>
+              <p>No meals found.</p>
           )}
 
           {hasMore && (

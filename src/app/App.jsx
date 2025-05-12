@@ -1,16 +1,17 @@
 import React from 'react';
 import { CartProvider } from '@context/CartContext';
-import { Menu } from '@pages/menuPage/menu.jsx';
-import {Layout} from "@ui/layout/Layout.jsx";
+import {HomePage} from "@pages/homePage/HomePage";
+import { Layout } from "@ui/layout/Layout.jsx";
 
 const App = () => {
-  return (
-    <CartProvider>
-      <Layout>
-        <Menu />
-      </Layout>
-    </CartProvider>
-  );
-};
+    return (
+      <CartProvider>
+        <Layout>
+            <HomePage/>
+        </Layout>
+      </CartProvider>
+    );
+  }
+
 
 export default App;
