@@ -29,6 +29,7 @@ export default defineConfig({
       "@api": path.resolve(__dirname, "src/shared/api"),
       "@types": path.resolve(__dirname, "src/shared/types"),
       "@hooks": path.resolve(__dirname, "src/shared/hooks"),
+      "@routes": path.resolve(__dirname, "src/routes"),
     },
   },
 });
