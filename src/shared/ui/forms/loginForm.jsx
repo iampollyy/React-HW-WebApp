@@ -39,7 +39,7 @@ export const LoginForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={styles.login__container}>
+        <form onSubmit={handleSubmit} className={styles.login__container} noValidate>
             <div className={styles.input__container}>
                 <div className={styles.row__container}>
                     <div className={styles.row}>
