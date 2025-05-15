@@ -6,6 +6,8 @@ import HomePageBanner from '@images/banners/homePageBanner.svg';
 import RatingImg from '@images/icons/rating.svg';
 
 import { ButtonPattern } from "@ui/button/ButtonPattern";
+import {useNavigate} from "react-router-dom";
+import { useAuth } from "@context/AuthContext";
 
 
 const HomeSection = styled.section`
@@ -133,13 +135,24 @@ const Paragraph = styled.p`
 `;
 
 export const HomePage = () => {
+    const navigate = useNavigate();
+
+    const { user } = useAuth();
+
+    const handleOrderClick = () => {
+        if (user) {
+            navigate("/menu");
+        } else {
+            navigate("/login");
+        }
+    };
     return (
         <HomeSection>
             <SectionContainer>
                 <SectionContainerLeft>
                     <SectionTitle>Beautiful food & takeaway, <AccentSpan>delivered</AccentSpan> to your door.</SectionTitle>
                     <SectionText>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</SectionText>
-                    <ButtonPattern >Place an order</ButtonPattern>
+                    <ButtonPattern onClick={handleOrderClick} >Place an order</ButtonPattern>
                     <Rating>
                         <RatingImage src={RatingImg} alt="Trustpilot"/>
                     <Paragraph> <AccentSpan>4.8 out of 5</AccentSpan> based on 2000+ reviews</Paragraph>

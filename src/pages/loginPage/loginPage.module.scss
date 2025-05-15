@@ -1,6 +1,7 @@
 @import "@styles/mixins/mediaQueries.scss";
 
-.menu__section {
+.loginPage {
+  padding: 15rem 23rem;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -17,23 +18,22 @@
     transform: skewY(-3deg);
     transform-origin: top right;
   }
-}
-
-.menu__section__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 140px 120px;
 
   @include for-size(phone-only) {
-    padding: 80px 20px;
+    padding: 4rem 1rem; 
   }
 }
 
-.heading__container {
+.loginPage__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 3.3rem;
+
+  @include for-size(phone-only) {
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

@@ -1,15 +1,12 @@
 import React from 'react';
-import { CartProvider } from '@context/CartContext';
-import {HomePage} from "@pages/homePage/HomePage";
 import { Layout } from "@ui/layout/Layout.jsx";
+import {AppRoutes} from "@routes/appRoutes";
 
 const App = () => {
     return (
-      <CartProvider>
-        <Layout>
-            <HomePage/>
-        </Layout>
-      </CartProvider>
+                <Layout>
+                    <AppRoutes />
+                </Layout>
     );
   }
 

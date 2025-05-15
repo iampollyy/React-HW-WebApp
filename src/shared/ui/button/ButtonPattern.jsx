@@ -68,7 +68,7 @@ const StyledButton = styled.button`
   `}
 
   ${({ $size }) => $size === "lg" && `
-    padding: 18px 32px;
+    padding: 1rem 2.88rem;
     font-size: 18px;
 
     @media screen and (max-width: 768px) {

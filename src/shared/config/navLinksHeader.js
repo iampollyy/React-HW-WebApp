@@ -1,7 +1,7 @@
 export const navLinksHeader = [
   {
     name: "Home",
-    link: "/home",
+    link: "/",
   },
   {
     name: "Menu",
@@ -13,6 +13,6 @@ export const navLinksHeader = [
   },
   {
     name: "Login",
-    link: "/sign-in",
+    link: "/login",
   },
 ];
