@@ -20,17 +20,17 @@ export const LoginForm = () => {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            if (emailValidation.isValid && passwordValidation.isValid) {
-                await signInWithEmailAndPassword(auth, email.value, password.value);
-                navigate('/menu');
-            } else {
-                console.error("Validation Error");
-            }
-        } catch (err) {
-            console.error(err);
-        }
+                e.preventDefault();
+                try {
+                    if (emailValidation.isValid && passwordValidation.isValid) {
+                        await signInWithEmailAndPassword(auth, email.value, password.value);
+                        navigate('/menu');
+                    } else {
+                        console.error("Validation Error");
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
     };
 
     const handleCancel = () => {
