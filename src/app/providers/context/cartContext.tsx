@@ -5,10 +5,12 @@ import React, {
     ReactNode,
 } from 'react';
 
+import { TCartItem, TProduct } from '@types';
+
 interface CartContextType {
-    cart: Record<string, number>;
-    addToCart: (id: string, amount: number) => void;
-    removeFromCart: (id: string) => void;
+    cart: TCartItem[];
+    addToCart: (product: TProduct, amount: number) => void;
+    removeFromCart: (productId: string) => void;
 }
 
 interface CartProviderProps {
@@ -18,12 +20,12 @@ interface CartProviderProps {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-    const [cart, setCart] = useState<Record<string, number>>(() => {
+    const [cart, setCart] = useState<TCartItem[]>(() => {
         try {
             const storedCart = sessionStorage.getItem('cart');
-            return storedCart ? JSON.parse(storedCart) : {};
+            return storedCart ? JSON.parse(storedCart) : [];
         } catch {
-            return {};
+            return [];
         }
     });
 
@@ -31,19 +33,23 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         sessionStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
-    const addToCart = (id: string, amount: number) => {
-        setCart((prevCart) => ({
-            ...prevCart,
-            [id]: (prevCart[id] || 0) + amount,
-        }));
+    const addToCart = (product: TProduct, amount: number) => {
+        setCart((prevCart) => {
+            const existingItem = prevCart.find(item => item.Product.id === product.id);
+            if (existingItem) {
+                return prevCart.map(item =>
+                    item.Product.id === product.id
+                        ? { ...item, amount: item.amount + amount }
+                        : item
+                );
+            } else {
+                return [...prevCart, { Product: product, amount }];
+            }
+        });
     };
 
-    const removeFromCart = (id: string) => {
-        setCart((prevCart) => {
-            const updatedCart = { ...prevCart };
-            delete updatedCart[id];
-            return updatedCart;
-        });
+    const removeFromCart = (productId: string) => {
+        setCart((prevCart) => prevCart.filter(item => item.Product.id !== productId));
     };
 
     return (

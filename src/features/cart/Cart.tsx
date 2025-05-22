@@ -7,7 +7,7 @@ import styles from './cart.module.scss';
 const Cart: React.FC = () => {
     const { cart } = useCart();
 
-    const cartCount = Object.values(cart).reduce((acc, amount) => acc + amount, 0);
+    const cartCount = cart.reduce((acc, item) => acc + item.amount, 0);
 
     return (
         <ButtonPattern
