@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./footer.module.scss";
 
-import navLinksFooter from "@config/navLinksFooter.js";
-import { SocialMedia } from '@ui/socialMedia/SocialMedia';
+import {navLinksFooter} from "@config";
+import { SocialMedia } from '@ui';
 import Logo from '@images/logo/logo.svg';
-import { FooterLinksColumn } from './footerLinksColumn/FooterLinksColumn.jsx';
+import { FooterLinksColumn } from './footerLinksColumn/FooterLinksColumn.tsx';
 
-export const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <div className={styles.container}>
@@ -36,3 +36,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

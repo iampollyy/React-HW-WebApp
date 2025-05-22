@@ -1,6 +1,20 @@
 import styled from "styled-components";
+import React from "react";
 
-const StyledButton = styled.button`
+type TButtonSize = "sm" | "md" | "lg";
+type TButtonVariant = "primary" | "secondary";
+type  TButtonPatternProps = {
+    children: React.ReactNode;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>)=> void;
+    type?: "button" | "submit" | "reset";
+    variant?: TButtonVariant;
+    size?: TButtonSize;
+    className?: string;
+    [key: string]: any;
+}
+
+const StyledButton = styled.button<{$variant:TButtonVariant;
+$size:TButtonSize}>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +92,7 @@ const StyledButton = styled.button`
   `}
 `;
 
-export const ButtonPattern = ({
+const ButtonPattern = ({
     children,
     onClick,
     type = "button",
@@ -86,7 +100,7 @@ export const ButtonPattern = ({
     size = "md",
     className = "",
     ...rest
-  }) => {
+  } : TButtonPatternProps) => {
     return (
       <StyledButton
         type={type}
@@ -103,4 +117,7 @@ export const ButtonPattern = ({
       </StyledButton>
     );
   };
+
+export default ButtonPattern;
+
   

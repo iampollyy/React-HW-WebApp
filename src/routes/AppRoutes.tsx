@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "@context/AuthContext";
+import { useAuth } from "@hooks";
 
-import { LoginPage } from "@pages/loginPage/loginPage";
-import { HomePage } from "@pages/homePage/HomePage";
-import { MenuPage } from "@pages/menuPage/MenuPage";
+import { LoginPage } from "@pages";
+import { HomePage } from "@pages";
+import { MenuPage } from "@pages";
 
-export function AppRoutes() {
+function AppRoutes() {
     const { user, loading } = useAuth();
 
     if (loading) return <div>Loading...</div>; // можно кастомный loader
@@ -24,3 +24,4 @@ export function AppRoutes() {
         </Routes>
     );
 }
+export default AppRoutes;

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import {forSize} from "@styles/mixins/styledMediaQueries.js";
+import {forSize} from "@mixins";
 
 
 import HomePageBanner from '@images/banners/homePageBanner.svg'; 
 import RatingImg from '@images/icons/rating.svg';
 
-import { ButtonPattern } from "@ui/button/ButtonPattern";
+import { ButtonPattern } from "@ui";
 import {useNavigate} from "react-router-dom";
-import { useAuth } from "@context/AuthContext";
+import { useAuth } from "@hooks";
 
 
 const HomeSection = styled.section`
@@ -134,7 +134,7 @@ const Paragraph = styled.p`
   `}
 `;
 
-export const HomePage = () => {
+ const HomePage = () => {
     const navigate = useNavigate();
 
     const { user } = useAuth();
@@ -166,3 +166,5 @@ export const HomePage = () => {
         </HomeSection>
     );
 };
+
+export default HomePage;

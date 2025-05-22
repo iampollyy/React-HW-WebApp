@@ -1,13 +1,14 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
-export const useInput = () => {
+const useInput = () => {
     const [value, setValue] = useState('');
     const [isDirty, setIsDirty] = useState(false);
 
-    const onChange = (event) =>{
+    const onChange = (event: React.ChangeEvent<HTMLInputElement> ) =>{
         setValue(event.target.value);
+
     };
-    const onBlur = (event)=>{
+    const onBlur = ()=>{
         setIsDirty(true);
     }
 
@@ -25,3 +26,5 @@ export const useInput = () => {
         reset
     }
 }
+
+export default  useInput;

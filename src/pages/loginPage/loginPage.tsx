@@ -1,8 +1,8 @@
 import styles from './loginPage.module.scss';
 
-import {LoginForm} from "@ui/forms/loginForm.jsx";
+import {LoginForm} from "@ui";
 
-export const LoginPage = () => {
+ const LoginPage = () => {
     return (
         <section className={styles.loginPage}>
             <div className={styles.loginPage__container}>
@@ -12,3 +12,5 @@ export const LoginPage = () => {
         </section>
     );
 }
+
+export default LoginPage;

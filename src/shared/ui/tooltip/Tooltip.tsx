@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "@ui/tooltip/tooltip.module.scss";
 
-export const Tooltip = ({ children, text }) => {
+interface ITooltipProps {
+    children: React.ReactNode;
+    text: string;
+}
+
+ const Tooltip = ({ children, text }:ITooltipProps) => {
   return (
     <div className={styles.tooltip}>
       {children}
@@ -9,3 +14,5 @@ export const Tooltip = ({ children, text }) => {
     </div>
   );
 }
+
+export default Tooltip;

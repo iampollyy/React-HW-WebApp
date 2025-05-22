@@ -1,11 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 import svgr from "vite-plugin-svgr";
-import path from "node:path";
 
-// ESM-compatible __dirname
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
@@ -30,6 +28,8 @@ export default defineConfig({
       "@types": path.resolve(__dirname, "src/shared/types"),
       "@hooks": path.resolve(__dirname, "src/shared/hooks"),
       "@routes": path.resolve(__dirname, "src/routes"),
+      "@mixins": path.resolve(__dirname, "src/styles/mixins"),
     },
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
   },
 });

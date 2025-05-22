@@ -1,16 +1,17 @@
 import styles from './loginForm.module.scss';
 
-import { Input } from "@ui/input/Input.jsx";
-import { ButtonPattern } from "@ui/button/ButtonPattern";
+import { Input } from "@ui";
+import { ButtonPattern } from "@ui";
 
-import { useInput } from "@hooks/useInput";
-import { useValidation } from "@hooks/useValidation";
+import { useInput } from "@hooks";
+import { useValidation } from "@hooks";
 
-import { auth } from '@config/firebase.js';
+import { auth } from '@config';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import React, { FormEvent }  from "react";
 
-export const LoginForm = () => {
+const LoginForm: React.FC = () => {
     const email = useInput('');
     const emailValidation = useValidation(email.value, { isEmpty: true, isEmail: true });
 
@@ -19,7 +20,7 @@ export const LoginForm = () => {
 
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement> ) => {
                 e.preventDefault();
                 try {
                     if (emailValidation.isValid && passwordValidation.isValid) {
@@ -49,8 +50,8 @@ export const LoginForm = () => {
                                 name="email"
                                 size="lg"
                                 value={email.value}
-                                onChange={e => email.onChange(e)}
-                                onBlur={e => email.onBlur(e)}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => email.onChange(e)}
+                                onBlur={(e: React.FocusEvent<HTMLInputElement>) => email.onBlur(e)}
                                 required
                             />
                         </label>
@@ -72,8 +73,8 @@ export const LoginForm = () => {
                                 name="password"
                                 size="lg"
                                 value={password.value}
-                                onChange={e => password.onChange(e)}
-                                onBlur={e => password.onBlur(e)}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => password.onChange(e)}
+                                onBlur={(e: React.FocusEvent<HTMLInputElement>) => password.onBlur(e)}
                                 required
                             />
                         </label>
@@ -98,3 +99,5 @@ export const LoginForm = () => {
         </form>
     );
 };
+
+export default LoginForm;

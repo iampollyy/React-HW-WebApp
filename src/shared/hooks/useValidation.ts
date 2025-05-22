@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 
-export const useValidation = (value, validations) => {
+type TValidations = {
+    isEmpty?: boolean;
+    isEmail?: boolean;
+    isPassword?: number;
+    isValid?: boolean;
+}
+
+const useValidation = (value:string, validations:TValidations) => {
     const [isEmpty, setIsEmpty] = useState(false);
     const [isEmail, setIsEmail] = useState(false);
     const [isPassword, setIsPassword] = useState(false);
@@ -41,3 +48,5 @@ export const useValidation = (value, validations) => {
         isValid,
     };
 };
+
+export default useValidation;

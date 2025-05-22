@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layout } from "@ui/layout/Layout.jsx";
-import {AppRoutes} from "@routes/appRoutes";
+import { Layout } from "@ui";
+import { AppRoutes } from "@routes";
 
-const App = () => {
+const App: React.FC = () => {
     return (
                 <Layout>
                     <AppRoutes />
