@@ -60,4 +60,3 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 };
 
 export { CartContext, CartProvider };
-export default CartProvider;
