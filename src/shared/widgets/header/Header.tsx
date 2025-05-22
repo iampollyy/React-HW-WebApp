@@ -2,9 +2,9 @@ import React from 'react';
 import styles from "./header.module.scss";
 
 import Logo from '@images/logo/logo.svg';
-import { NavMenuHeader } from '@features/navMenu/navMenuHeader/navMenuHeader.jsx';
+import { NavMenuHeader } from '@features';
 
-export const Header = () => {
+ const Header: React.FC = () => {
 
     return (
       <header className={styles.header}>
@@ -20,3 +20,4 @@ export const Header = () => {
     )
   }
 
+  export default Header;

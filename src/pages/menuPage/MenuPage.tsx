@@ -2,11 +2,11 @@ import React from "react";
 
 import styles from "@pages/menuPage/menu.module.scss";
 
-import { ProductList } from "@entities/productList/ProductList.jsx";
-import { Tooltip } from "@ui/tooltip/Tooltip.jsx";
+import { ProductList } from "@entities";
+import { Tooltip } from "@ui";
 
 
-export const MenuPage = () => {
+const MenuPage:React.FC = () => {
     return (
         <section className={styles.menu__section}>
         <div className={styles.menu__section__container}>
@@ -23,3 +23,5 @@ export const MenuPage = () => {
     );
 
   }
+
+  export default MenuPage;

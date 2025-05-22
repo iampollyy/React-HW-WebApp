@@ -2,7 +2,15 @@ import React from "react";
 
 import styles from "./footerLinksColumn.module.scss";
 
-export const FooterLinksColumn = ({links, title}) => {
+type TFooterLinksColumnProps = {
+    links: {
+        label: string;
+        url: string;
+    }[];
+    title: string;
+}
+
+export const FooterLinksColumn: React.FC<TFooterLinksColumnProps> = ({links, title}) => {
     return (
       <div className={styles.column}>
         <h4 className={styles.column__title}>{title}</h4>

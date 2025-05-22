@@ -1,18 +1,22 @@
-import { css } from 'styled-components';
+import { css, CSSObject } from 'styled-components';
 
-const sizes = {
+type SizeKey = 'phone-only' | 'desktop-up' | 'big-desktop-up';
+
+const sizes: Record<SizeKey, string> = {
     'phone-only': '768px',
     'desktop-up': '1200px',
     'big-desktop-up': '1800px',
 };
 
-export const forSize = (size) => {
+const forSize = (size: SizeKey) => {
     const breakpoint = sizes[size];
     if (!breakpoint) return () => '';
 
-    return (...args) => css`
+    return (...args: [CSSObject | TemplateStringsArray, ...any[]]) => css`
         @media (${size === 'phone-only' ? 'max-width' : 'min-width'}: ${breakpoint}) {
             ${css(...args)}
         }
     `;
 };
+
+export default forSize;

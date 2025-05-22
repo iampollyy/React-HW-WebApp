@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { ProductCard } from "@entities/productCard/ProductCard";
-import { ButtonPattern } from "@ui/button/ButtonPattern";
+import { ProductCard } from "@entities";
+import { ButtonPattern } from "@ui";
 import styles from "./productList.module.scss";
-import { useFetch } from "@hooks/useFetch";
+import {useFetch} from "@hooks";
+import { TProduct } from "@types";
 
-export const ProductList = () => {
+const ProductList: React.FC = () => {
   const [currPage, setCurrPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const { data: meals, error, loading } = useFetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals");
-  const [filteredMeals, setFilteredMeals] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { data: meals, error, loading } = useFetch<TProduct[]>(
+      "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals"
+  );
+  const [filteredMeals, setFilteredMeals] = useState<TProduct[]>([]);
   const itemsPerPage = 6;
 
   useEffect(() => {
@@ -18,16 +21,18 @@ export const ProductList = () => {
   }, [meals]);
 
   const handleLoadMore = () => {
-    setCurrPage((prevState) => prevState + 1);
+    setCurrPage((prev) => prev + 1);
   };
 
   const categories = useMemo(() => {
     if (!meals) return [];
-    const categoriesSet = new Set(meals.map((meal) => meal.category));
-    return Array.from(categoriesSet);
+    const set = new Set<string>(meals.map((meal) => meal.category));
+    return Array.from(set);
   }, [meals]);
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category: string) => {
+    if (!meals) return;
+
     if (selectedCategory === category) {
       setSelectedCategory(null);
       setFilteredMeals(meals);
@@ -36,6 +41,7 @@ export const ProductList = () => {
       const filtered = meals.filter((meal) => meal.category === category);
       setFilteredMeals(filtered);
     }
+
     setCurrPage(1);
   };
 
@@ -62,7 +68,9 @@ export const ProductList = () => {
 
         <div className={styles.product__container}>
           {visibleMeals.length > 0 ? (
-              visibleMeals.map((item) => <ProductCard key={item.id} item={item} />)
+              visibleMeals.map((item) => (
+                  <ProductCard key={item.id} item={item} />
+              ))
           ) : (
               <p>No meals found.</p>
           )}
@@ -81,3 +89,5 @@ export const ProductList = () => {
       </div>
   );
 };
+
+export default ProductList;

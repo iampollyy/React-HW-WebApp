@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-export function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+function useFetch<T>(url: string) {
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,11 +12,11 @@ export function useFetch(url) {
         if (!response.ok) {
           throw new Error("Can't establish connection with API.");
         }
-        const result = await response.json();
+        const result: T = await response.json();
         setData(result);
         localStorage.setItem("lastResponse", JSON.stringify(result));
       } catch (err) {
-        setError(err.message);
+        setError(err instanceof Error ? err.message : "An unknown error occurred");
       } finally {
         setLoading(false);
       }
@@ -27,3 +27,5 @@ export function useFetch(url) {
 
   return { data, error, loading };
 }
+
+export default useFetch;

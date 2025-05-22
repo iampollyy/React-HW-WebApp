@@ -1,10 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { CartContext } from '@context/CartContext';
-import { ButtonPattern } from '@ui/button/ButtonPattern';
-import { Input } from '@ui/input/Input';
+import React, {useContext, useState, useEffect, ChangeEvent} from 'react';
+import { CartContext } from '@context';
+import { ButtonPattern } from '@ui';
+import { Input } from '@ui';
 import styles from './productCard.module.scss';
+import {TProduct} from "@types"
 
-export const ProductCard = ({ item }) => {
+interface ProductCardProps {
+  item: TProduct;
+}
+ const ProductCard : React.FC<ProductCardProps> = ({ item }) => {
   const { addToCart } = useContext(CartContext);
   const [amount, setAmount] = useState(0);
 
@@ -12,7 +16,7 @@ export const ProductCard = ({ item }) => {
     setAmount(0);
   }, [item.id]);
 
-  const handleChange = (event) => {
+  const handleChange = (event : ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value, 10);
     setAmount(value >= 0 ? value : 0);
   };
@@ -57,3 +61,5 @@ export const ProductCard = ({ item }) => {
       </div>
   );
 };
+
+export default ProductCard;
