@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const useInput = () => {
+const useInput = (initialValue: string) => {
     const [value, setValue] = useState('');
     const [isDirty, setIsDirty] = useState(false);
 
@@ -13,7 +13,7 @@ const useInput = () => {
     }
 
     const reset = () =>{
-        setValue('');
+        setValue(initialValue);
         setIsDirty(false);
     }
 

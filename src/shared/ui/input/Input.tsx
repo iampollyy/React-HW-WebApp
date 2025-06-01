@@ -8,20 +8,20 @@ interface IInputProps {
     [x: string]: any;
 }
 
-const Input: React.FC = ({
-  type = 'text',
-  size = 'md',
-  className = '',
-  ...props
- }: IInputProps) => {
-     return (
-      <input
-        type={ type }
-        className={`${styles.input} ${styles[size]} ${className}`}
-        {...props}
-      />
+const Input: React.FC<IInputProps> = ({
+                                          type = 'text',
+                                          size = 'md',
+                                          className = '',
+                                          ...props
+                                      }) => {
+    return (
+        <input
+            type={type}
+            className={`${styles.input} ${styles[size]} ${className}`}
+            {...props}
+        />
     );
-  }
+};
 
 export default Input;
 
