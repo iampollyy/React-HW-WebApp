@@ -24,8 +24,8 @@
             "@widgets": ["shared/widgets"],
             "@styles": ["styles"],
             "@mixins": ["styles/mixins"],
-
-
+            "@store": ["app/store"],
+            "@utils": ["shared/utils"],
         },
 
         /* Bundler mode */

@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import styles from './navMenuHeader.module.scss';
 
 import { navLinksHeader } from '@config';
-import { Cart } from '@features';
+import { Cart, logout } from '@features';
 import { BurgerMenuButton } from '@features';
 
-import { useAuth } from '@hooks';
+import { useAppDispatch, useAppSelector } from '@hooks'
+
 
 const NavMenuHeader: React.FC = () => {
-    const { user, logout } = useAuth();
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.auth.user);
 
+    
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const handleClick = (): void => {
@@ -29,7 +32,7 @@ const NavMenuHeader: React.FC = () => {
                         );
                     })}
                     {user && (
-                        <button id={styles.a} onClick={logout}>
+                        <button id={styles.a} onClick={() => dispatch(logout())}>
                             Logout
                         </button>
                     )}
