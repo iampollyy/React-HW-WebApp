@@ -1,0 +1,1 @@
+export {default as forSize} from "./styledMediaQueries.ts";
