@@ -7,7 +7,7 @@ import RatingImg from '@images/icons/rating.svg';
 
 import { ButtonPattern } from "@ui";
 import {useNavigate} from "react-router-dom";
-import { useAuth } from "@hooks";
+import { useAppSelector } from "@hooks";
 
 
 const HomeSection = styled.section`
@@ -137,7 +137,8 @@ const Paragraph = styled.p`
  const HomePage = () => {
     const navigate = useNavigate();
 
-    const { user } = useAuth();
+         const user = useAppSelector((state) => state.auth.user)
+     
 
     const handleOrderClick = () => {
         if (user) {

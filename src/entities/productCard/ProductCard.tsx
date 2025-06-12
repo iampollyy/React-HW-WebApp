@@ -2,9 +2,10 @@ import React, { useState, useEffect, ChangeEvent} from 'react';
 import { ButtonPattern } from '@ui';
 import { Input } from '@ui';
 import styles from './productCard.module.scss';
-import {TProduct} from "@types"
-import {useCart} from "@hooks";
 
+import { TProduct } from "@types"
+import { useAppDispatch } from '@hooks';
+import { addToCart } from '@features';
 
 
 interface ProductCardProps {
@@ -12,7 +13,7 @@ interface ProductCardProps {
 }
  const ProductCard : React.FC<ProductCardProps> = ({ item }) => {
 
-     const { addToCart } = useCart()
+   const dispatch = useAppDispatch()
      const [amount, setAmount] = useState(0);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ interface ProductCardProps {
 
   const handleAddToCart = () => {
     if (amount > 0) {
-      addToCart(item, amount);
+      dispatch(addToCart({product: item, amount }));
       setAmount(0);
     }
   };
@@ -66,3 +67,5 @@ interface ProductCardProps {
 };
 
 export default ProductCard;
+
+

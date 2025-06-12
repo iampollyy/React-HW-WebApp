@@ -29,6 +29,8 @@ export default defineConfig({
       "@hooks": path.resolve(__dirname, "src/shared/hooks"),
       "@routes": path.resolve(__dirname, "src/routes"),
       "@mixins": path.resolve(__dirname, "src/styles/mixins"),
+      "@store": path.resolve(__dirname, "src/app/store"),
+      "@utils": path.resolve(__dirname, "src/shared/utils"),
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
   },

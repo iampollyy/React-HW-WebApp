@@ -1,14 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "@hooks";
 
 import { LoginPage } from "@pages";
 import { HomePage } from "@pages";
 import { MenuPage } from "@pages";
 
-function AppRoutes() {
-    const { user, loading } = useAuth();
+import { useAppSelector } from '@hooks'
 
-    if (loading) return <div>Loading...</div>; // можно кастомный loader
+
+function AppRoutes() {
+    const user = useAppSelector((state) => state.auth.user);
 
     return (
         <Routes>
