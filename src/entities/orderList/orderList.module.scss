@@ -1,0 +1,15 @@
+@import "@styles/mixins/mediaQueries.scss";
+.order__list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+
+  @include for-size(phone-only) {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

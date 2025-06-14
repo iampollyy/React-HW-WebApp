@@ -27,7 +27,7 @@ export default defineConfig({
       "@api": path.resolve(__dirname, "src/shared/api"),
       "@types": path.resolve(__dirname, "src/shared/types"),
       "@hooks": path.resolve(__dirname, "src/shared/hooks"),
-      "@routes": path.resolve(__dirname, "src/routes"),
+      "@router": path.resolve(__dirname, "src/router"),
       "@mixins": path.resolve(__dirname, "src/styles/mixins"),
       "@store": path.resolve(__dirname, "src/app/store"),
       "@utils": path.resolve(__dirname, "src/shared/utils"),
