@@ -1,0 +1,117 @@
+@import "@styles/mixins/mediaQueries.scss";
+.card {
+  width: 1180px;
+  height: 200px;
+  background-color: var(--cards-bg-color); 
+  border: 1px solid var(--cards-border-color); 
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  padding: 40px 45px;
+
+  @include for-size(phone-only) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 57px;
+
+    @include for-size(phone-only) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+  }
+}
+
+
+.order__details{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  @include for-size(phone-only) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.image {
+  display: block;
+  width: 120px;
+  height: 120px;
+
+  @include for-size(phone-only) {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.title__price{
+  display: flex;
+  flex-direction: row;
+  gap: 545px;
+
+  @include for-size(phone-only) {
+    width: 100%;
+    gap: 5px;
+  }
+
+.title {
+  color: var(--text-title-dark);
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.6px;
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-size(phone-only) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  @include for-size(phone-only) {
+    font-size: 1rem;
+  }
+}
+
+.price {
+  color: var(--accent-primary);
+  font-size: 0.9375rem;
+  line-height: 0.9375rem;
+
+  @include for-size(phone-only) {
+    font-size: 1rem;
+  }
+}
+}
+
+
+.order__actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+
+  @include for-size(phone-only) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

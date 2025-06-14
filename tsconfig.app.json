@@ -14,7 +14,7 @@
             "@entities": ["entities"],
             "@features": ["features"],
             "@pages": ["pages"],
-            "@routes": ["routes"],
+            "@router": ["router"],
             "@shared": ["shared"],
             "@api": ["shared/api"],
             "@config": ["shared/config"],
