@@ -1,4 +1,6 @@
-@import "@styles/mixins/mediaQueries.scss";.social__media {
+@import "@styles/mixins/mediaQueries.scss";
+
+.social__media {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
@@ -18,4 +20,27 @@
   background: transparent;
   border-radius: 100px;
   outline: 1px solid rgba(126, 130, 143, 0.30);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: var(--social-media-color); 
+
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
+.insta {
+  mask-image: url("@images/icons/inst.svg");
+}
+
+.x {
+  mask-image: url("@images/icons/x.svg");
+}
+
+.youtube {
+  mask-image: url("@images/icons/youTube.svg");
 }

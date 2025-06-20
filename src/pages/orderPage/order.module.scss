@@ -5,6 +5,7 @@
   z-index: 1;
   overflow: hidden;
   padding: 14rem 12rem;
+  background-color: var(--background-primary);
 
   &::before {
     content: "";
@@ -14,7 +15,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: var(--background-secondary);
+    background: var(--background-details);
     transform: skewY(-3deg);
     transform-origin: top right;
   }

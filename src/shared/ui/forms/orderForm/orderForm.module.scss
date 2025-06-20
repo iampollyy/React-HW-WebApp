@@ -44,6 +44,8 @@
     align-items: center;
     gap: 1.88rem;
     justify-content: space-between;
+    color: var(--input-label);
+
 
     @include for-size(phone-only) {
         flex-direction: column;
