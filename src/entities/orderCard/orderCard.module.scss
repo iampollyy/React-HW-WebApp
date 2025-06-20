@@ -1,14 +1,13 @@
 @import "@styles/mixins/mediaQueries.scss";
-
 .card {
-  width: 580px;
+  width: 1180px;
   height: 200px;
   background-color: var(--cards-bg-color); 
   border: 1px solid var(--cards-border-color); 
   border-radius: 0.375rem;
   display: flex;
   align-items: center;
-  padding: 0 26px;
+  padding: 40px 45px;
 
   @include for-size(phone-only) {
     width: 100%;
@@ -17,14 +16,29 @@
     align-items: flex-start;
     padding: 16px;
   }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 57px;
+
+    @include for-size(phone-only) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+  }
 }
 
-.container {
-  display: flex;
+
+.order__details{
+  display:flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-
+  gap:30px;
   @include for-size(phone-only) {
     flex-direction: row;
     align-items: flex-start;
@@ -43,17 +57,15 @@
   }
 }
 
-.aboutBurger {
+.title__price{
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 6px;
+  flex-direction: row;
+  gap: 545px;
 
   @include for-size(phone-only) {
     width: 100%;
     gap: 5px;
   }
-}
 
 .title {
   color: var(--text-title-dark);
@@ -87,29 +99,19 @@
     font-size: 1rem;
   }
 }
-
-.description {
-  margin-top: 6px;
-  margin-bottom: 8px;
-  color: var(--text-card);
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.32px;
-
-  @include for-size(phone-only) {
-    font-size: 14px;
-    line-height: 1.3rem;
-  }
 }
 
 
-.add_to_cart__actions {
+.order__actions{
   display: flex;
-  justify-content: flex-start;
-  gap: 8px;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  gap: 34px;
 
-  input[type="number"] {
-    max-width: 60px;
+  @include for-size(phone-only) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
   }
 }

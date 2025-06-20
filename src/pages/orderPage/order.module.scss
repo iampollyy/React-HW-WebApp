@@ -1,10 +1,11 @@
 @import "@styles/mixins/mediaQueries.scss";
 
-.menu__section {
-  background-color: var(--background-primary);
+.orderPage__section {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  padding: 14rem 12rem;
+  background-color: var(--background-primary);
 
   &::before {
     content: "";
@@ -14,27 +15,26 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: var(--background-secondary);
+    background: var(--background-details);
     transform: skewY(-3deg);
     transform-origin: top right;
   }
-}
-
-.menu__section__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 140px 120px;
 
   @include for-size(phone-only) {
-    padding: 80px 20px;
+    padding: 4rem 1rem;
   }
 }
 
-.heading__container {
+.orderPage__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4.6rem;
+
+  @include for-size(phone-only) {
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

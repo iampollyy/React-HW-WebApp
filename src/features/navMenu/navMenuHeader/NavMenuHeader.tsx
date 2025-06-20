@@ -5,7 +5,10 @@ import { navLinksHeader } from '@config';
 import { Cart, logout } from '@features';
 import { BurgerMenuButton } from '@features';
 
+import { DarkMode } from '@ui';
+
 import { useAppDispatch, useAppSelector } from '@hooks'
+import { NavLink } from 'react-router-dom';
 
 
 const NavMenuHeader: React.FC = () => {
@@ -26,17 +29,18 @@ const NavMenuHeader: React.FC = () => {
                     {navLinksHeader.map((link, index) => {
                         if (user && link.name === 'Login') return null;
                         return (
-                            <a key={index} href={link.link} id={styles.a}>
+                            <NavLink key={index} to={link.link} className={({ isActive }) => `${styles.a} ${isActive ? styles.active : ''}` }>
                                 {link.name}
-                            </a>
+                            </NavLink>
                         );
                     })}
                     {user && (
-                        <button id={styles.a} onClick={() => dispatch(logout())}>
+                        <button className={`${styles.a} ${styles.button}`} onClick={() => dispatch(logout())}>
                             Logout
                         </button>
                     )}
                 </div>
+                <DarkMode />
                 <Cart />
             </nav>
 

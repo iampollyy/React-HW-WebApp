@@ -25,7 +25,7 @@ const HomeSection = styled.section`
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--background-secondary);
+        background: var(--background-details);
         clip-path: polygon(0% 0%, 0% -1%, 14% 65%, 100% 100%, 100% 0);
     }
 
