@@ -2,8 +2,8 @@ import React from "react";
 
 import styles from "@pages/menuPage/menu.module.scss";
 
-import { ProductList } from "@entities";
-import { Tooltip } from "@ui";
+import ProductList  from "@entities/productList/ProductList";
+import  Tooltip  from "@ui/tooltip/Tooltip";
 
 
 const MenuPage:React.FC = () => {

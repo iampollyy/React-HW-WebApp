@@ -1,4 +1,4 @@
-import { TAuthUser } from "@features";
+import { TAuthUser } from "@features/auth/authSlice"; 
 import { User } from "firebase/auth";
 
 export const mapFirebaseUser = (user: User): TAuthUser => ({

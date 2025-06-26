@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import styles from './navMenuHeader.module.scss';
 
-import { navLinksHeader } from '@config';
-import { Cart, logout } from '@features';
-import { BurgerMenuButton } from '@features';
+import  Cart  from '@features/cart/Cart';
+import { logout } from '@features/auth/authSlice';
+import  navLinksHeader  from '@config/navLinksHeader';
+import  BurgerMenuButton  from '@features/navMenu/burgerMenu/BurgerMenuButton';
 
-import { useAppDispatch, useAppSelector } from '@hooks'
+import  DarkMode  from '@ui/darkMode/DarkMode';
+
+import useAppDispatch  from '@hooks/useAppDispatch'
+import useAppSelector from '@hooks/useAppSelector';
+import { NavLink } from 'react-router-dom';
 
 
 const NavMenuHeader: React.FC = () => {
@@ -26,17 +31,18 @@ const NavMenuHeader: React.FC = () => {
                     {navLinksHeader.map((link, index) => {
                         if (user && link.name === 'Login') return null;
                         return (
-                            <a key={index} href={link.link} id={styles.a}>
+                            <NavLink key={index} to={link.link} className={({ isActive }) => `${styles.a} ${isActive ? styles.active : ''}` }>
                                 {link.name}
-                            </a>
+                            </NavLink>
                         );
                     })}
                     {user && (
-                        <button id={styles.a} onClick={() => dispatch(logout())}>
+                        <button className={`${styles.a} ${styles.button}`} onClick={() => dispatch(logout())}>
                             Logout
                         </button>
                     )}
                 </div>
+                <DarkMode />
                 <Cart />
             </nav>
 

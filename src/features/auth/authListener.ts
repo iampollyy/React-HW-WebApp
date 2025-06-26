@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { auth } from '@config';
+import  auth  from '@config/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { setUser } from '@features';
-import { mapFirebaseUser } from '@utils';
-import { useAppDispatch } from '@hooks';
+import { setUser } from '@features/auth/authSlice';
+import { mapFirebaseUser }  from '@utils/firebaseHelper';
+import  useAppDispatch  from '@hooks/useAppDispatch';
 
 const useAuthListener = () => {
   const dispatch = useAppDispatch();

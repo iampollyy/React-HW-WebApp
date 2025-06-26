@@ -13,7 +13,7 @@ $line-height: 1.25rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    background-color: var(--light);
+    background-color: var(--background-header);
     border: 1px solid var(--accent-primary);
     position: absolute;
     top: 60px;
@@ -34,15 +34,21 @@ $line-height: 1.25rem;
   font-size: $font-size;
   line-height: $line-height;
 
-  #a {
+  .a {
     color: var(--text-header);
 
     &:hover {
       color: var(--accent-primary);
       transition: all 0.3s ease;
     }
-  }
 
+    &.active {
+      color: var(--accent-primary);
+    }
+  }
+.button{
+  display: flex;
+}
   @include for-size(phone-only) {
     flex-direction: column;
     gap: 0.5rem;

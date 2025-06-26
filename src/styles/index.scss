@@ -1,11 +1,11 @@
-
-
 body{
   font-family: 'Inter', sans-serif;
 }
 
+*{
+  transition: color 0.3s ease-in-out ;
+}
 :root {
-
   /* Accent / Brand */
   --accent-primary: #35b8be;
   --accent-primary-hover: rgba(53, 184, 190, 0.7);
@@ -14,13 +14,19 @@ body{
   /* Background */
   --background-primary: #ffffff;
   --background-secondary: #F5FBFC;
+  --background-header: #ffffff;
+  --background-footer: #f5fbfc;
+  --background-details:#F5FBFC;
+
 
   /* Text */
   --text-header: #28224b;
   --text-paragraph: #546285;
+  --text-card: #546285;
   --text-secondary: #222222;
   --text-light: #ffffff;
   --text-title-dark: #08090a;
+  --text-ads:#353448;
 
   /* Buttons */
   --button-primary-bg: #35b8be;
@@ -42,13 +48,69 @@ body{
   --input-border: #dddddd;
   --input-border-hover: #35b8be;
   --input-border-focus: #35b8be;
+  --input-label: #08090A;
 
-
-
-
-
-
+  --svg-leopard-color: #E5F1F3;
+  --hr-color:  rgba(126, 130, 143, 0.09);
+  --social-media-color: #28224b;
 }
+
+[data-theme = 'dark']  {
+   /* Accent / Brand */
+  --accent-primary: #35b8be;
+  --accent-primary-hover: rgba(61, 61, 61, 0.35);
+  --light: #ffffff;
+
+  /* Background */
+  --background-primary: #121212;
+  --background-secondary: #181818;
+  --background-details: rgba(38, 38, 38, 0.4);
+  --background-header: #212121; 
+  --background-footer: #212121;
+
+  /* Text */
+  --text-header: #ffffff;
+  --text-paragraph: #b3b3b3;
+  --text-card: #dddddd;
+  --text-secondary: #222222;
+  --text-light: #ffffff;
+  --text-title-dark: #ffffff;
+  --text-ads: #ffffff;
+
+  .heading1{
+    color: var(--text-light);
+  }
+
+  
+  /* Buttons */
+  --button-primary-bg: #35b8be;
+  --button-primary-hover-bg: rgba(53, 184, 190, 0.7);
+  --button-primary-focus-bg: rgb(156, 244, 249);
+  --button-primary-text: #ffffff;
+
+  --button-secondary-bg:  rgba(61, 61, 61, 0.2);
+  --button-secondary-text: #ffffff;
+  --button-secondary-border-color:#3a3b3c;
+
+
+  /* Cards */
+  --cards-bg-color: #242526;
+  --cards-border-color: rgba(53, 184, 190, 15%);
+
+  /* Inputs */
+  --input-text: #ffffff;
+  --input-bg: #282828;
+  --input-border: rgba(53, 184, 190, 0.15);
+  --input-border-hover: #35b8be;
+  --input-border-focus: #35b8be;
+  --input-label: #ffffff;
+
+  --svg-leopard-color:#404040;
+  --hr-color:#494949;
+  --social-media-color: #ffffff;
+
+  }
+
 
 
 /*Typography*/

@@ -5,9 +5,9 @@ import {forSize} from "@mixins";
 import HomePageBanner from '@images/banners/homePageBanner.svg'; 
 import RatingImg from '@images/icons/rating.svg';
 
-import { ButtonPattern } from "@ui";
+import  ButtonPattern from "@ui/button/ButtonPattern";
 import {useNavigate} from "react-router-dom";
-import { useAppSelector } from "@hooks";
+import  useAppSelector  from "@hooks/useAppSelector";
 
 
 const HomeSection = styled.section`
@@ -25,7 +25,7 @@ const HomeSection = styled.section`
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--background-secondary);
+        background: var(--background-details);
         clip-path: polygon(0% 0%, 0% -1%, 14% 65%, 100% 100%, 100% 0);
     }
 
