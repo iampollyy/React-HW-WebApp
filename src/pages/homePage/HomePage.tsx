@@ -5,9 +5,9 @@ import {forSize} from "@mixins";
 import HomePageBanner from '@images/banners/homePageBanner.svg'; 
 import RatingImg from '@images/icons/rating.svg';
 
-import { ButtonPattern } from "@ui";
+import  ButtonPattern from "@ui/button/ButtonPattern";
 import {useNavigate} from "react-router-dom";
-import { useAppSelector } from "@hooks";
+import  useAppSelector  from "@hooks/useAppSelector";
 
 
 const HomeSection = styled.section`

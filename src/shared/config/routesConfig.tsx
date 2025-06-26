@@ -1,5 +1,9 @@
-import { HomePage, LoginPage, MenuPage, NotFoundPage, OrderPage } from "@pages";
 import { JSX } from "react";
+import HomePage from "@pages/homePage/HomePage";
+import MenuPage from "@pages/menuPage/MenuPage";
+import NotFoundPage from "@pages/notFoundPage/NotFoundPage";
+import OrderPage from "@pages/orderPage/OrderPage";
+import LoginPage from "@pages/loginPage/LoginPage";
 
 interface IRoute{
   path: string;

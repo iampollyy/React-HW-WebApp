@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { ProductCard } from "@entities";
-import { ButtonPattern } from "@ui";
+import  ProductCard  from "@entities/productCard/ProductCard";
+import  ButtonPattern  from "@ui/button/ButtonPattern";
 import styles from "./productList.module.scss";
-import {useFetch} from "@hooks";
+import useFetch from "@hooks/useFetch";
 import { TProduct } from "@types";
 
 const ProductList: React.FC = () => {

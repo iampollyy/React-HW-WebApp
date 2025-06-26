@@ -1,6 +1,6 @@
-import { OrderForm } from '@ui';
+import  OrderForm  from '@ui/forms/orderForm/OrderForm';
 import styles from './order.module.scss';
-import { OrderList } from '@entities';
+import  OrderList  from '@entities/orderList/OrderList';
 
 const OrderPage = () => {
   return (

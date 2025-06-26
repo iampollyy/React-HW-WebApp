@@ -1,9 +1,13 @@
 import styles from "./orderForm.module.scss";
-import { Input } from "@ui";
-import { ButtonPattern } from "@ui";
+import  Input  from "@ui/input/Input";
+import  ButtonPattern  from "@ui/button/ButtonPattern";
 
-import { useAppDispatch, useAppSelector, useInput,  useValidation} from "@hooks";
-import { clearCart } from "@features";
+import useAppDispatch from "@hooks/useAppDispatch";
+import useAppSelector from "@hooks/useAppSelector";
+import useInput from "@hooks/useInput"; 
+import useValidation from "@hooks/useValidation";
+import { clearCart } from "@features/cart/cartSlice";
+
 const OrderForm = () => {
   const street = useInput("");
   const streetValidation = useValidation(street.value, { isEmpty: true });
@@ -57,6 +61,7 @@ const OrderForm = () => {
        if (!response.ok) throw new Error("Failed to place order");
       
       dispatch(clearCart())
+      alert(`Order placed for ${street.value}, house ${house.value}`);
       street.reset();
       house.reset();
     } catch (error) {
@@ -79,6 +84,8 @@ const OrderForm = () => {
                 value={street.value}
                 onChange={street.onChange}
                 onBlur={street.onBlur}
+                placeholder="Enter your street"
+
               />
             </label>
             {street.isDirty && streetValidation.isEmpty && (
@@ -97,6 +104,7 @@ const OrderForm = () => {
                 value={house.value}
                 onChange={house.onChange}
                 onBlur={house.onBlur}
+                placeholder="Enter your house number"
               />
             </label>
             {house.isDirty && houseValidation.isEmpty && (

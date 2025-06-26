@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { routes } from "@config";
-import { useAppSelector } from "@hooks";
-import { PrivateRoute } from "@router";
+import  routes  from "@config/routesConfig";
+import  useAppSelector  from "@hooks/useAppSelector";
+import  PrivateRoute  from "@router/PrivateRoute";
 
 function AppRoutes() {
   const user = useAppSelector((state) => state.auth.user);

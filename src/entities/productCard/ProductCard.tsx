@@ -1,11 +1,11 @@
 import React, { useState, useEffect, ChangeEvent} from 'react';
-import { ButtonPattern } from '@ui';
-import { Input } from '@ui';
+import  ButtonPattern  from '@ui/button/ButtonPattern';
+import  Input  from '@ui/input/Input';
 import styles from './productCard.module.scss';
 
 import { TProduct } from "@types"
-import { useAppDispatch } from '@hooks';
-import { addToCart } from '@features';
+import  useAppDispatch  from '@hooks/useAppDispatch';
+import { addToCart } from '@features/cart/cartSlice';
 
 
 interface ProductCardProps {

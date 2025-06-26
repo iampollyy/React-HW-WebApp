@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./footer.module.scss";
 
-import {navLinksFooter} from "@config";
-import { SocialMedia } from '@ui';
+import navLinksFooter from "@config/navLinksFooter";
+import  SocialMedia  from '@ui/socialMedia/SocialMedia';
 import Logo from '@images/logo/logo.svg';
-import { FooterLinksColumn } from './footerLinksColumn/FooterLinksColumn.tsx';
+import { FooterLinksColumn }  from './footerLinksColumn/FooterLinksColumn';
 
 const Footer: React.FC = () => {
   return (
