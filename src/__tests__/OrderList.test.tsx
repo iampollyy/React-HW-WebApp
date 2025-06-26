@@ -3,11 +3,10 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import OrderList from '@entities/orderList/OrderList';
-import OrderCard from '@entities/orderCard/OrderCard';
 
-jest.mock('@entities/orderCard/OrderCard', () => (props: any) => (
-  <div data-testid="order-card" data-item={JSON.stringify(props.item)} />
-));
+jest.mock('@entities/orderCard/OrderCard', () => ({
+  default: (props: { item: unknown }) => <div data-testid="order-card" data-item={JSON.stringify(props.item)} />,
+}));
 
 jest.mock('@hooks/useAppSelector', () => ({
   __esModule: true,
