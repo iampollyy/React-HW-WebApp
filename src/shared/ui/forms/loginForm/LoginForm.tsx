@@ -1,10 +1,8 @@
 import styles from './loginForm.module.scss';
 
-import { Input } from "@ui";
-import { ButtonPattern } from "@ui";
+import { Input, ButtonPattern } from "@ui";
 
-import { useAppDispatch, useInput } from "@hooks";
-import { useValidation } from "@hooks";
+import { useAppDispatch, useInput,  useValidation} from "@hooks";
 
 import { auth } from '@config';
 import { signInWithEmailAndPassword } from "firebase/auth";

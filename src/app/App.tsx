@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from "@ui";
-import { AppRoutes } from "@routes";
+import { AppRoutes } from "@router";
 
 import { useAuthListener } from '@features';
 
