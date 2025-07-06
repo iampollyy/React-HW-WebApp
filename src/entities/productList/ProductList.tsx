@@ -48,7 +48,7 @@ const ProductList: React.FC = () => {
   const visibleMeals = filteredMeals.slice(0, currPage * itemsPerPage);
   const hasMore = visibleMeals.length < filteredMeals.length;
 
-  if (loading) return <p>Loading meals...</p>;
+  if (loading) return <p className={styles.loading}>Loading meals...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (

@@ -6,7 +6,7 @@ $line-height: 1.25rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--light);
+  background-color: var(--background-header);
 
   @include for-size(phone-only) {
     padding: 16px 20px;

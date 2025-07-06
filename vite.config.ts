@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import svgr from "vite-plugin-svgr";
 
-
 export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
@@ -32,6 +31,6 @@ export default defineConfig({
       "@store": path.resolve(__dirname, "src/app/store"),
       "@utils": path.resolve(__dirname, "src/shared/utils"),
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
+    extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
   },
 });

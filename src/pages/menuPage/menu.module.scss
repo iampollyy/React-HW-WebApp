@@ -1,6 +1,7 @@
 @import "@styles/mixins/mediaQueries.scss";
 
 .menu__section {
+  background-color: var(--background-primary);
   position: relative;
   z-index: 1;
   overflow: hidden;
