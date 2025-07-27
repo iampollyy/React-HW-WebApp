@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import styles from './navMenuHeader.module.scss';
 
-import { navLinksHeader } from '@config';
-import { Cart, logout } from '@features';
-import { BurgerMenuButton } from '@features';
+import  Cart  from '@features/cart/Cart';
+import { logout } from '@features/auth/authSlice';
+import  navLinksHeader  from '@config/navLinksHeader';
+import  BurgerMenuButton  from '@features/navMenu/burgerMenu/BurgerMenuButton';
 
-import { DarkMode } from '@ui';
+import  DarkMode  from '@ui/darkMode/DarkMode';
 
-import { useAppDispatch, useAppSelector } from '@hooks'
+import useAppDispatch  from '@hooks/useAppDispatch'
+import useAppSelector from '@hooks/useAppSelector';
 import { NavLink } from 'react-router-dom';
 
 

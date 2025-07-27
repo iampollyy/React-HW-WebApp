@@ -1,9 +1,11 @@
-import { ButtonPattern, Input } from '@ui';
+import ButtonPattern from '@ui/button/ButtonPattern';
+import Input from '@ui/input/Input';
 import styles from './orderCard.module.scss';
+import useAppDispatch from '@hooks/useAppDispatch';
+import { removeFromCart, updateAmount } from '@features/cart/cartSlice';
 
 import { TCartItem } from '@types';
-import { useAppDispatch } from '@hooks';
-import { removeFromCart, updateAmount } from '@features';
+
 
 interface OrderCardProps {
   item: TCartItem;

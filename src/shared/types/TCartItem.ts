@@ -1,6 +1,9 @@
-import {TProduct} from "./index.ts";
+import { TProduct } from "./TProduct";
 
- export type TCartItem = {
-    Product: TProduct;
-    amount: number;
+export type TCartItem = {
+  Product: Omit<
+    TProduct,
+    "category" | "description" | "rating" | "area" | "instructions"
+  >;
+  amount: number;
 };

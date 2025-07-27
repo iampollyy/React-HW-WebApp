@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAppSelector } from "@hooks";
+import  useAppSelector  from "@hooks/useAppSelector";
 
 const PrivateRoute = () => {
   const user = useAppSelector((state) => state.auth.user);

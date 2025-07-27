@@ -1,15 +1,18 @@
 import styles from './loginForm.module.scss';
 
-import { Input, ButtonPattern } from "@ui";
+import Input from "@ui/input/Input";
+import ButtonPattern from "@ui/button/ButtonPattern";
 
-import { useAppDispatch, useInput,  useValidation} from "@hooks";
+import useAppDispatch from "@hooks/useAppDispatch";
+import useInput from "@hooks/useInput";
+import useValidation from "@hooks/useValidation";
 
-import { auth } from '@config';
+import  auth  from '@config/firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import React, { FormEvent }  from "react";
-import { setUser } from '@features';
-import { mapFirebaseUser } from '@utils';
+import { setUser } from '@features/auth/authSlice';
+import { mapFirebaseUser } from '@utils/firebaseHelper';
 
 const LoginForm: React.FC = () => {
     const email = useInput('');
