@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./footerLinksColumn.module.scss";
 
 type TFooterLinksColumnProps = {
@@ -10,7 +8,7 @@ type TFooterLinksColumnProps = {
     title: string;
 }
 
-export const FooterLinksColumn: React.FC<TFooterLinksColumnProps> = ({links, title}) => {
+export const FooterLinksColumn = ({links, title} : TFooterLinksColumnProps) => {
     return (
       <div className={styles.column}>
         <h4 className={styles.column__title}>{title}</h4>

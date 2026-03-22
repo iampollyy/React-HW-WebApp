@@ -9,17 +9,16 @@ interface IInputProps {
 }
 
 const Input: React.FC<IInputProps> = ({
-                                          type = 'text',
-                                          size = 'md',
-                                          className = '',
-                                          ...props
-                                      }) => {
+    type = 'text',
+    size = 'md',
+    className = '',
+ ...props }) => {
     return (
-        <input
-            type={type}
-            className={`${styles.input} ${styles[size]} ${className}`}
-            {...props}
-        />
+  <input
+   type={type}
+   className={`${styles.input} ${styles[size]} ${className}`}
+   {...props}
+   />
     );
 };
 

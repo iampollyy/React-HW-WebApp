@@ -11,7 +11,7 @@ interface OrderCardProps {
   item: TCartItem;
 }
 
-const OrderCard: React.FC<OrderCardProps> = ({ item }) => { 
+const OrderCard = ({ item }: OrderCardProps) => { 
    const dispatch = useAppDispatch();
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {

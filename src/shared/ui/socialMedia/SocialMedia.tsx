@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "./socialMedia.module.scss";
 
 
-const SocialMedia: React.FC = () => {
+const SocialMedia = () => {
   return (
     <div className={styles.social__media}>
       <div className={styles.circle}>
